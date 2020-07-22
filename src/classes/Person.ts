@@ -1,9 +1,5 @@
 import Address from "./Address.ts";
-import {
-  makeDateForComparison,
-  differenceInYears,
-  today,
-} from "../util/date.ts";
+import { getDifferenceInFullYears, today } from "../util/dateUtils.ts";
 
 class Person {
   firstName: string;
@@ -28,21 +24,16 @@ class Person {
 
   // output: Number of years the person has
   get age(): number {
-    const { bornDay } = this;
-    const yearsHeMakesThisYear = differenceInYears(today, bornDay);
-
-    // see if has made years this year
-    const todayForComparison = makeDateForComparison(
-      today,
-    );
-    const bornDayForComparison = makeDateForComparison(
-      bornDay,
-    );
-
-    const age = bornDayForComparison > todayForComparison
-      ? yearsHeMakesThisYear - 1
-      : yearsHeMakesThisYear;
-
-    return age;
+    return getDifferenceInFullYears(today, this.bornDay);
   }
 }
+
+const mikeAddress = new Address("h", "a", "n", "f", "d");
+const mike = new Person(
+  "power",
+  "shit",
+  mikeAddress,
+  "sdfa",
+  new Date(2007, 6, 23),
+);
+console.log(mike.age);
