@@ -1,0 +1,59 @@
+Abstract Classes:
+    -Person
+
+Main Classes:
+    -Student extends Person
+    -Professor extends Person
+    -Course
+    -School 
+
+Util Classes:
+    - Address
+
+
+
+Person:
+    -firstName:string
+    -lastName:string
+    -get fullName: string
+    -address: Address
+    -phone number: str
+    -birthday: date
+    -get age: int
+
+Course: 
+    -minStudents: int
+    -maxStudents: int
+    -get canceled: boolean
+    -teacher_number: int
+    -name: string
+    -id: int
+    -start: Date
+    -end: Date
+    -get duration: int(maybe date?)
+
+Student:
+    -locationStatus: 
+        international || local
+    -get schoolTime: 
+        partTime || fullTime
+    -get academic probation: 
+        boolean
+
+Professor:
+    -get salary: float
+
+Address:
+    -country: string
+    -state(province or district or region): string
+    -city: string
+    -street: string
+    -postalCode: string
+
+
+
+
+
+
+
+    
